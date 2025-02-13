@@ -13,19 +13,48 @@ public class CheckGuest {
 
         input.close();
 
-        boolean found = false;
+        boolean guestFound = false;
+        int index = 0;
 
-        for (int i = 0; i < invitati.length; i++) {
+        while (!guestFound && index < invitati.length) {
+            if (invitati[index].toLowerCase().strip().equals(nomeInvitato.toLowerCase().strip())) {
+                guestFound = true;
+            } else {
+                index++;
+            }
+        }
+
+        if (guestFound) {
+            System.out.println("Benvenuto nel mondo dei balocchi!");
+        } else {
+            System.out.println("Non sei stato invitato");
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*  
+
+         for (int i = 0; i < invitati.length; i++) {
             if (nomeInvitato.toLowerCase().strip().equals(invitati[i].toLowerCase().strip())) {
-                found = true;
+                guestFound = true;
                 break;
             } 
         }
                 
-            if (found) {
+            if (guestFound) {
                 System.out.println("Benvenuto nel mondo dei balocchi!");
             } else {
                 System.out.println("Non sei stato invitato");
-            }
+            } */
+
+        
     }
 }
